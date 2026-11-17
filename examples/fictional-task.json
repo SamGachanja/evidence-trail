@@ -1,0 +1,175 @@
+{
+  "id": "FICTIONAL_DO_NOT_SUBMIT",
+  "owner": "Example trainer",
+  "topic": "Invented closed archive of fictional field guides",
+  "break_pattern": "exhaustive niche set",
+  "prompt": "Which entries in the completed 2020 field-guide archive were marked as revised, and who edited them?",
+  "answer_template": "[entry title] ([editor])",
+  "scope": {
+    "inclusion_rule": "Every entry in the archive's completed 2020 edition whose status is revised",
+    "start_boundary": "First entry of the 2020 edition",
+    "end_boundary": "Last entry of the completed 2020 edition"
+  },
+  "golden_answer": [
+    "Marsh Birds (Ari Vale)",
+    "Cave Mosses (Nia Rowan)"
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://archive.example.org/2020/marsh-birds",
+      "domain": "example.org",
+      "title": "Fictional archive: Marsh Birds",
+      "language": "English",
+      "credibility_reason": "In this invented scenario, the page is the archive's own final record.",
+      "retrieved_at": "2026-10-19",
+      "quote_locator": "Record heading and metadata",
+      "public": true,
+      "non_social": true,
+      "raw_html_checked": true,
+      "necessary_for": [
+        "Marsh Birds title, editor, and revised status",
+        "2020 edition boundary"
+      ],
+      "source_format": "html",
+      "source_fact": "Marsh Birds — status: revised — editor: Ari Vale"
+    },
+    {
+      "id": "S2",
+      "url": "https://catalog.example.net/2020/cave-mosses",
+      "domain": "example.net",
+      "title": "Fictional catalog: Cave Mosses",
+      "language": "English",
+      "credibility_reason": "In this invented scenario, the page is the catalog's own final record.",
+      "retrieved_at": "2026-10-19",
+      "quote_locator": "Catalog record",
+      "public": true,
+      "non_social": true,
+      "raw_html_checked": true,
+      "necessary_for": [
+        "Cave Mosses title, editor, and revised status",
+        "2020 edition boundary"
+      ],
+      "source_format": "html",
+      "source_fact": "Cave Mosses — status: revised — editor: Nia Rowan"
+    }
+  ],
+  "evidence": [
+    {
+      "answer_item": "Marsh Birds (Ari Vale)",
+      "source_ids": [
+        "S1"
+      ],
+      "qualification": "The fictional 2020 record identifies this entry as revised.",
+      "field_support": [
+        {
+          "field": "entry title",
+          "value": "Marsh Birds",
+          "source_id": "S1",
+          "exact_quote": "Marsh Birds — status: revised — editor: Ari Vale"
+        },
+        {
+          "field": "editor",
+          "value": "Ari Vale",
+          "source_id": "S1",
+          "exact_quote": "Marsh Birds — status: revised — editor: Ari Vale"
+        }
+      ]
+    },
+    {
+      "answer_item": "Cave Mosses (Nia Rowan)",
+      "source_ids": [
+        "S2"
+      ],
+      "qualification": "The fictional 2020 record identifies this entry as revised.",
+      "field_support": [
+        {
+          "field": "entry title",
+          "value": "Cave Mosses",
+          "source_id": "S2",
+          "exact_quote": "Cave Mosses — status: revised — editor: Nia Rowan"
+        },
+        {
+          "field": "editor",
+          "value": "Nia Rowan",
+          "source_id": "S2",
+          "exact_quote": "Cave Mosses — status: revised — editor: Nia Rowan"
+        }
+      ]
+    }
+  ],
+  "research": {
+    "search_trial": [
+      {
+        "query": "fictional 2020 field-guide archive revised entries",
+        "observation": "A broad listing did not include editor metadata; the individual records were needed."
+      }
+    ],
+    "completeness_proof": "In this invented scenario, the closed 2020 index lists all qualifying records.",
+    "completeness_source_ids": [
+      "S1",
+      "S2"
+    ],
+    "domain_dependency": "The invented records are split across two fictional domains, each supplying one qualifying entry.",
+    "single_domain_shortcut_test": "Neither fictional domain contains both entries.",
+    "prompt_to_source_connection": "The completed 2020 edition and revised-status clue point to the two fictional records.",
+    "output_normalization": "English names and source spelling are used; no unit conversion is needed.",
+    "pretest": {
+      "method": "",
+      "observation": "",
+      "not_run_reason": "This is a fictional format example with no real search results."
+    },
+    "realistic_reason": "A researcher might compare the revised entries and their editors in a completed edition.",
+    "timeless_reason": "The fictional 2020 edition is closed.",
+    "constraint_evidence": [
+      {
+        "constraint": "Finished 2020 archive and stated attributes",
+        "source_ids": [
+          "S1",
+          "S2"
+        ],
+        "evidence": "Both cited source records are in the closed 2020 archive."
+      }
+    ]
+  },
+  "screening": [
+    {
+      "run_id": "fictional-run-1",
+      "model_label": "Fictional model",
+      "harness": "Fictional harness",
+      "run_at": "2026-10-19T00:00:00Z",
+      "screened_prompt": "Which entries in the completed 2020 field-guide archive were marked as revised, and who edited them?",
+      "model_answer": "Marsh Birds (Ari Vale)",
+      "trajectory": "fictional://no-official-trajectory-1",
+      "browsed": true,
+      "outcome": "factual_error",
+      "factual_explanation": "The fictional response omitted Cave Mosses, which S2 identifies as revised."
+    },
+    {
+      "run_id": "fictional-run-2",
+      "model_label": "Fictional model",
+      "harness": "Fictional harness",
+      "run_at": "2026-10-19T00:00:00Z",
+      "screened_prompt": "Which entries in the completed 2020 field-guide archive were marked as revised, and who edited them?",
+      "model_answer": "Cave Mosses (Ari Vale)",
+      "trajectory": "fictional://no-official-trajectory-2",
+      "browsed": true,
+      "outcome": "factual_error",
+      "factual_explanation": "The fictional response assigned the wrong editor; S2 names Nia Rowan."
+    },
+    {
+      "run_id": "fictional-run-3",
+      "model_label": "Fictional model",
+      "harness": "Fictional harness",
+      "run_at": "2026-10-19T00:00:00Z",
+      "screened_prompt": "Which entries in the completed 2020 field-guide archive were marked as revised, and who edited them?",
+      "model_answer": "Marsh Birds (Ari Vale)\nForest Ferns (Nia Rowan)",
+      "trajectory": "fictional://no-official-trajectory-3",
+      "browsed": true,
+      "outcome": "factual_error",
+      "factual_explanation": "The fictional response added Forest Ferns and omitted Cave Mosses."
+    }
+  ],
+  "example_answer": "Sample nonqualifying item (Wrong)",
+  "modality_decision": "Fictional HTML-only format example; no project modality approval or real sources."
+}

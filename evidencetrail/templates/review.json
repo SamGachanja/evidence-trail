@@ -1,0 +1,81 @@
+{
+  "reviewer": "",
+  "reviewed_at": "",
+  "task_sha256": "",
+  "independent_answer": [],
+  "source_verification": [],
+  "item_verification": [],
+  "run_verification": [],
+  "checks": {
+    "reproduce_answer": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "answer_exactness": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "source_access": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "source_necessity": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "scope_and_prompt": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "timelessness": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "screening": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "blocklist_and_batch": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "delivery": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "constraint_coverage": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    },
+    "judge_feedback": {
+      "status": "unverified",
+      "evidence": "",
+      "location": "",
+      "fix": ""
+    }
+  },
+  "judge_feedback": {
+    "status": "",
+    "independent_assessment": ""
+  }
+}

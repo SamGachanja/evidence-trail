@@ -1,0 +1,2 @@
+# Synthetic restriction for examples and tests only; not a real policy.
+blocked.example

@@ -1,0 +1,4 @@
+# Create config/blocklist.txt from your own source policy.
+# One hostname or URL per line; subdomains are included.
+# At least one entry is required by this workflow.
+# blocked.example

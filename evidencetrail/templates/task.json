@@ -1,0 +1,36 @@
+{
+  "id": "TASK_ID",
+  "owner": "",
+  "topic": "",
+  "break_pattern": "",
+  "prompt": "",
+  "answer_template": "[item] ([attribute])",
+  "scope": {
+    "inclusion_rule": "",
+    "start_boundary": "",
+    "end_boundary": ""
+  },
+  "golden_answer": [],
+  "sources": [],
+  "evidence": [],
+  "research": {
+    "search_trial": [],
+    "completeness_proof": "",
+    "completeness_source_ids": [],
+    "domain_dependency": "",
+    "single_domain_shortcut_test": "",
+    "prompt_to_source_connection": "",
+    "output_normalization": "",
+    "pretest": {
+      "method": "",
+      "observation": "",
+      "not_run_reason": ""
+    },
+    "realistic_reason": "",
+    "timeless_reason": "",
+    "constraint_evidence": []
+  },
+  "screening": [],
+  "example_answer": "",
+  "modality_decision": ""
+}

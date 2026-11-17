@@ -1,0 +1,136 @@
+{
+  "id": "PUBLIC_RELEASE_DATES",
+  "owner": "EvidenceTrail public execution example",
+  "topic": "Initial stable release dates for two named software releases",
+  "break_pattern": "Baseline source-audit demonstration, not a model-breaking benchmark",
+  "modality_decision": "Public HTML only; raw retrieval is performed by this execution. No official browser or screening harness is claimed.",
+  "prompt": "For the initial stable releases Python 3.12.0 and PostgreSQL 16, list the release name and release date recorded on the respective official release page or announcement. Retain each page's human-readable date spelling.",
+  "answer_template": "[release] | [release date]",
+  "example_answer": "ImaginaryDB 99 | January 1, 1900",
+  "scope": {
+    "inclusion_rule": "Exactly the two named initial stable releases; exclude release candidates, later patches, and site-wide news banners.",
+    "start_boundary": "The initial stable Python 3.12.0 and PostgreSQL 16 release records.",
+    "end_boundary": "The same two historical records; later page notices do not change the release dates."
+  },
+  "golden_answer": [
+    "Python 3.12.0 | Oct. 2, 2023",
+    "PostgreSQL 16 | September 14, 2023"
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.python.org/downloads/release/python-3120/",
+      "domain": "python.org",
+      "title": "This is the stable release of Python 3.12.0",
+      "language": "English",
+      "credibility_reason": "Official software-project release record, authoritative for its own release.",
+      "retrieved_at": "2026-11-17",
+      "quote_locator": "Page heading and release-date field",
+      "source_format": "html",
+      "source_fact": "This is the stable release of Python 3.12.0",
+      "public": true,
+      "non_social": true,
+      "raw_html_checked": true,
+      "necessary_for": [
+        "Python 3.12.0 release identity and initial stable release date"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://www.postgresql.org/about/news/postgresql-16-released-2715/",
+      "domain": "postgresql.org",
+      "title": "PostgreSQL 16 Released!",
+      "language": "English",
+      "credibility_reason": "Official software-project release record, authoritative for its own release.",
+      "retrieved_at": "2026-11-17",
+      "quote_locator": "Announcement heading and dated opening paragraph",
+      "source_format": "html",
+      "source_fact": "PostgreSQL 16 Released!",
+      "public": true,
+      "non_social": true,
+      "raw_html_checked": true,
+      "necessary_for": [
+        "PostgreSQL 16 release identity and initial stable release date"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "answer_item": "Python 3.12.0 | Oct. 2, 2023",
+      "source_ids": [
+        "S1"
+      ],
+      "qualification": "This is one of the two exact releases named by the question; use its release-specific date.",
+      "field_support": [
+        {
+          "field": "release",
+          "value": "Python 3.12.0",
+          "source_id": "S1",
+          "exact_quote": "Python 3.12.0"
+        },
+        {
+          "field": "release date",
+          "value": "Oct. 2, 2023",
+          "source_id": "S1",
+          "exact_quote": "Release date: Oct. 2, 2023"
+        }
+      ]
+    },
+    {
+      "answer_item": "PostgreSQL 16 | September 14, 2023",
+      "source_ids": [
+        "S2"
+      ],
+      "qualification": "This is one of the two exact releases named by the question; use its release-specific date.",
+      "field_support": [
+        {
+          "field": "release",
+          "value": "PostgreSQL 16",
+          "source_id": "S2",
+          "exact_quote": "PostgreSQL 16"
+        },
+        {
+          "field": "release date",
+          "value": "September 14, 2023",
+          "source_id": "S2",
+          "exact_quote": "September 14, 2023"
+        }
+      ]
+    }
+  ],
+  "research": {
+    "search_trial": [
+      {
+        "query": "Direct lookup of the official Python 3.12.0 release page and PostgreSQL 16 release announcement",
+        "observation": "The two official records were opened during preparation; the runner separately retrieves and audits their HTML. No search-engine or model trajectory is claimed."
+      }
+    ],
+    "completeness_proof": "The question explicitly names two releases; there is one answer row for each, supported by its own official project record.",
+    "completeness_source_ids": [
+      "S1",
+      "S2"
+    ],
+    "domain_dependency": "Python supplies the Python date; PostgreSQL supplies the PostgreSQL date. These are separate project-maintained records.",
+    "single_domain_shortcut_test": "The selected evidence set requires both project records; no claim is made that these facts cannot be found together elsewhere.",
+    "prompt_to_source_connection": "Each named software release identifies its official project release record.",
+    "output_normalization": "Keep the source date spelling; do not substitute an ISO date or a later site-wide banner date.",
+    "pretest": {
+      "method": "",
+      "observation": "",
+      "not_run_reason": "No model pretest or external screening was performed; this example exercises live source auditing."
+    },
+    "realistic_reason": "An engineer can reconstruct release-date provenance for a compatibility or dependency report.",
+    "timeless_reason": "Both named initial releases occurred in 2023; this is not a latest-version question.",
+    "constraint_evidence": [
+      {
+        "constraint": "Initial stable release identity and original release date, excluding later patches and banners",
+        "source_ids": [
+          "S1",
+          "S2"
+        ],
+        "evidence": "Use the named release heading and its own dated release metadata or announcement opening."
+      }
+    ]
+  },
+  "screening": []
+}

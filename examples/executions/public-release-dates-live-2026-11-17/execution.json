@@ -1,0 +1,170 @@
+{
+  "started_at": "2026-11-17T20:24:57.297192+00:00",
+  "python": "3.14.0",
+  "platform": "Darwin",
+  "source_commit": "49554dd6b7f061b774ac278adb598af0bc82c04f",
+  "implementation_sha256": "854c8a58253d6aa46f5433405f5ca1bab847076d0b32cc4435e962b88df5f351",
+  "network": "Real public HTML requests through EvidenceTrail/curl; no mocks",
+  "path_redaction": "Checkout and execution directory paths in logs/argv replaced with <checkout> and <run>; all other command output retained",
+  "external_model_screening_performed": false,
+  "independent_review_performed": false,
+  "commands": [
+    {
+      "label": "01-before-check",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "check",
+        "<run>/package/task.json",
+        "--blocklist",
+        "<checkout>/config/demo-blocklist.txt",
+        "--tasks-dir",
+        "<run>/batch"
+      ],
+      "started_at": "2026-11-17T20:24:57.297997+00:00",
+      "finished_at": "2026-11-17T20:24:57.389723+00:00",
+      "duration_seconds": 0.092,
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "label": "02-live-source-audit",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "verify-sources",
+        "<run>/package",
+        "--source-timeout",
+        "20",
+        "--blocklist",
+        "<checkout>/config/demo-blocklist.txt",
+        "--tasks-dir",
+        "<run>/batch"
+      ],
+      "started_at": "2026-11-17T20:24:57.390005+00:00",
+      "finished_at": "2026-11-17T20:24:59.677001+00:00",
+      "duration_seconds": 2.287,
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "label": "03-after-check",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "check",
+        "<run>/package/task.json",
+        "--blocklist",
+        "<checkout>/config/demo-blocklist.txt",
+        "--tasks-dir",
+        "<run>/batch"
+      ],
+      "started_at": "2026-11-17T20:24:59.677501+00:00",
+      "finished_at": "2026-11-17T20:24:59.769043+00:00",
+      "duration_seconds": 0.092,
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "label": "04-form-fields",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "form-fields",
+        "<run>/package/task.json",
+        "--output",
+        "<run>/package/form-fields.md"
+      ],
+      "started_at": "2026-11-17T20:24:59.769350+00:00",
+      "finished_at": "2026-11-17T20:24:59.858745+00:00",
+      "duration_seconds": 0.089,
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "label": "05-fingerprint",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "fingerprint",
+        "<run>/package/task.json"
+      ],
+      "started_at": "2026-11-17T20:24:59.859021+00:00",
+      "finished_at": "2026-11-17T20:24:59.946320+00:00",
+      "duration_seconds": 0.087,
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "label": "06-render-blocked",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "render",
+        "<run>/package/task.json",
+        "--output",
+        "<run>/package/submission.md",
+        "--blocklist",
+        "<checkout>/config/demo-blocklist.txt",
+        "--tasks-dir",
+        "<run>/batch"
+      ],
+      "started_at": "2026-11-17T20:24:59.946609+00:00",
+      "finished_at": "2026-11-17T20:25:00.035845+00:00",
+      "duration_seconds": 0.089,
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "label": "07-review-blocked",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "review",
+        "<run>/package",
+        "--blocklist",
+        "<checkout>/config/demo-blocklist.txt",
+        "--tasks-dir",
+        "<run>/batch"
+      ],
+      "started_at": "2026-11-17T20:25:00.036114+00:00",
+      "finished_at": "2026-11-17T20:25:00.119403+00:00",
+      "duration_seconds": 0.083,
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "label": "08-negative-live-source-audit",
+      "argv": [
+        "python3",
+        "-m",
+        "evidencetrail",
+        "verify-sources",
+        "<run>/negative-probe",
+        "--source-timeout",
+        "20",
+        "--blocklist",
+        "<checkout>/config/demo-blocklist.txt",
+        "--tasks-dir",
+        "<run>/batch"
+      ],
+      "started_at": "2026-11-17T20:25:00.121591+00:00",
+      "finished_at": "2026-11-17T20:25:01.097314+00:00",
+      "duration_seconds": 0.976,
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ],
+  "finished_at": "2026-11-17T20:25:01.097838+00:00",
+  "source_audit_verified": 2,
+  "negative_quote_rejected": true,
+  "task_sha256": "b6806406150665fdf0d4889153aa0e1677ab252bb2b45b41cb55d033181e0feb",
+  "status": "live_sources_verified_screening_and_independent_review_pending"
+}

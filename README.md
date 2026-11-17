@@ -43,6 +43,16 @@ python3 examples/offline_demo.py
 
 It creates a blank package in a temporary directory, renders the fictional example, computes its fingerprint, and confirms that the fictional data is rejected by the readiness gate. It makes no network requests and does not fabricate an approved research task.
 
+## Recorded live execution
+
+A [real public-source execution](examples/executions/README.md) is included, with command logs, timestamps, actual exit codes, source-response hashes, and artifact checksums. Both official release pages were verified. An intentionally incorrect quotation was rejected, and the tool correctly blocked handoff because screening and independent review had not been performed. This is an operational source-audit example, not a model-performance claim.
+
+```sh
+python3 examples/live_run.py --output /tmp/evidencetrail-live-new-run
+```
+
+This opt-in command makes real public HTML requests and requires a fresh output directory. See the execution guide for the recorded artifacts and limits.
+
 ## Workflow
 
 ```text
@@ -117,7 +127,7 @@ Tests use synthetic packages, mocked source retrieval, and a fake agent executab
 ```text
 evidencetrail/          CLI, validation, rendering, source auditing
   templates/           Blank task and independent-review templates
-examples/              Fictional package and offline demonstration
+examples/              Fictional demo, live runner, and recorded public-source execution
 config/                Synthetic blocklist and format example
 docs/                  Public data-model documentation
 tests/                 Offline regression and CLI tests

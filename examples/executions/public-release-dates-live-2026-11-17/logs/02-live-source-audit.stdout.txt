@@ -1,0 +1,5 @@
+VERIFIED S1: https://www.python.org/downloads/release/python-3120/
+VERIFIED S2: https://www.postgresql.org/about/news/postgresql-16-released-2715/
+ERROR: screening must contain exactly three official runs
+WARNING: Check the current shared blocklist and project domain ledger; the local snapshot and files cannot prove either is current or complete
+SOURCES CHECKED; OFFICIAL SCREENING REQUIRED

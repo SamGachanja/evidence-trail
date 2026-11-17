@@ -1,0 +1,38 @@
+{
+  "generator": "Manually authored public reference example; no model generation executed",
+  "phase": "screening_required",
+  "blockers": [
+    "External screening and independent review have not been performed"
+  ],
+  "source_audit": [
+    {
+      "source_id": "S1",
+      "url": "https://www.python.org/downloads/release/python-3120/",
+      "checked_at": "2026-11-17T20:24:57.464770+00:00",
+      "verified": true,
+      "reason": "",
+      "final_url": "https://www.python.org/downloads/release/python-3120/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "78804651656a66f84295be1de023bf3451a00d3503adc09118d5f156e42e6e31",
+      "quote_count": 3
+    },
+    {
+      "source_id": "S2",
+      "url": "https://www.postgresql.org/about/news/postgresql-16-released-2715/",
+      "checked_at": "2026-11-17T20:24:57.639738+00:00",
+      "verified": true,
+      "reason": "",
+      "final_url": "https://www.postgresql.org/about/news/postgresql-16-released-2715/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "18285583b7a3ad62c842d7a758748d5687a68133dae8efe4f57889bab1e16574",
+      "quote_count": 3
+    }
+  ],
+  "resolved_blockers": [],
+  "validation_errors": [
+    "screening must contain exactly three official runs"
+  ],
+  "validation_warnings": [
+    "Check the current shared blocklist and project domain ledger; the local snapshot and files cannot prove either is current or complete"
+  ]
+}

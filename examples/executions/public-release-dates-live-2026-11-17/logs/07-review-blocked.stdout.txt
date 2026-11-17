@@ -1,0 +1,22 @@
+ERROR: screening must contain exactly three official runs
+ERROR: Reviewer and reviewed_at are required
+ERROR: reproduce_answer: unverified
+ERROR: answer_exactness: unverified
+ERROR: source_access: unverified
+ERROR: source_necessity: unverified
+ERROR: scope_and_prompt: unverified
+ERROR: constraint_coverage: unverified
+ERROR: timelessness: unverified
+ERROR: screening: unverified
+ERROR: judge_feedback: unverified
+ERROR: blocklist_and_batch: unverified
+ERROR: delivery: unverified
+ERROR: independent_answer must reproduce the complete golden set
+ERROR: Missing source verification for S1
+ERROR: Missing source verification for S2
+ERROR: Missing item verification for Python 3.12.0 | Oct. 2, 2023
+ERROR: Missing item verification for PostgreSQL 16 | September 14, 2023
+ERROR: judge_feedback needs a status and independent_assessment
+ERROR: Review is missing the current task SHA-256; recheck the package and update task_sha256
+WARNING: Check the current shared blocklist and project domain ledger; the local snapshot and files cannot prove either is current or complete
+RETURN FOR REVISION: 20 issue(s)

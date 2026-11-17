@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-11-17T20:32:40.614468+00:00",
+  "cli_command": [
+    "codex",
+    "--search",
+    "--ask-for-approval",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--output-last-message",
+    "<isolated-workspace>/answer.md",
+    "<prompt via stdin>"
+  ],
+  "exit_code": 0,
+  "finished_at": "2026-11-17T20:32:55.997154+00:00",
+  "cli_version": "codex-cli 0.169.0-alpha.11.1",
+  "requested_model": null,
+  "resolved_model": null,
+  "model_identity_note": "The actual CLI default was used. A resolved model identifier was not present in the recorded events; no model name is inferred.",
+  "prompt_sha256": "b96c459b5c80dfc7b67298a5d149f814cb4595e15eb85258d7e031ce50e9d712",
+  "input_transport": "Exact prompt.txt via stdin; the reference answer was not provided to the model",
+  "trace_scope": "Event kinds, web queries/actions, source metadata and token usage; private reasoning, response bodies and thread IDs omitted.",
+  "outcome": "correct",
+  "evaluation_scope": "One baseline execution; not three screenings or independent external review",
+  "capture_note": "This run used the same CLI invocation as examples/model_run.py; artifacts were exported after completion from the original captured output, not rerun or synthesized."
+}

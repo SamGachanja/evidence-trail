@@ -1,0 +1,29 @@
+{
+  "verdict": "correct",
+  "model_break_observed": false,
+  "review_type": "Assistant comparison against separately retrieved official records; not an independent human review",
+  "checks": [
+    {
+      "release": "Python 3.12.0",
+      "expected_release_date": "Oct. 2, 2023",
+      "returned_release_date": "Oct. 2, 2023",
+      "correct": true,
+      "official_source": "https://www.python.org/downloads/release/python-3120/"
+    },
+    {
+      "release": "PostgreSQL 16",
+      "expected_release_date": "September 14, 2023",
+      "returned_release_date": "September 14, 2023",
+      "correct": true,
+      "official_source": "https://www.postgresql.org/about/news/postgresql-16-released-2715/"
+    }
+  ],
+  "citations": "Both answer rows link to the official release-specific records, and both pages appear in the completed web-tool event.",
+  "format": "The prompt did not prohibit a table or extra citation column, so neither is penalized.",
+  "limitations": [
+    "One easy baseline does not establish broad research performance.",
+    "No factual failure or model break was observed.",
+    "The workflow requires three genuine factual-error screenings; this correct run must not be relabeled to satisfy that gate.",
+    "No independent human review or external submission was performed."
+  ]
+}

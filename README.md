@@ -43,7 +43,7 @@ python3 examples/offline_demo.py
 
 It creates a blank package in a temporary directory, renders the fictional example, computes its fingerprint, and confirms that the fictional data is rejected by the readiness gate. It makes no network requests and does not fabricate an approved research task.
 
-## Recorded live execution
+## Recorded executions
 
 A [real public-source execution](examples/executions/README.md) is included, with command logs, timestamps, actual exit codes, source-response hashes, and artifact checksums. Both official release pages were verified. An intentionally incorrect quotation was rejected, and the tool correctly blocked handoff because screening and independent review had not been performed. This is an operational source-audit example, not a model-performance claim.
 
@@ -52,6 +52,8 @@ python3 examples/live_run.py --output /tmp/evidencetrail-live-new-run
 ```
 
 This opt-in command makes real public HTML requests and requires a fresh output directory. See the execution guide for the recorded artifacts and limits.
+
+A separate [actual model execution](examples/model-executions/README.md) records the exact prompt, model answer, live web-tool events, and evaluation. The model **passed** the release-date baseline; no break is claimed. Use `examples/model_run.py` to capture another authenticated model run, optionally selecting an explicit model. This invokes an AI service and is separate from the source-audit runner above.
 
 ## Workflow
 
@@ -127,7 +129,7 @@ Tests use synthetic packages, mocked source retrieval, and a fake agent executab
 ```text
 evidencetrail/          CLI, validation, rendering, source auditing
   templates/           Blank task and independent-review templates
-examples/              Fictional demo, live runner, and recorded public-source execution
+examples/              Offline demo, live source/model runners, and recorded executions
 config/                Synthetic blocklist and format example
 docs/                  Public data-model documentation
 tests/                 Offline regression and CLI tests

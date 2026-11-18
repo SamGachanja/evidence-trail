@@ -30,3 +30,27 @@ python3 examples/model_run.py \
 Use `--model PROVIDER_MODEL_ID` to request a specific available model and `--codex-bin PATH` if discovery fails. The requested ID is recorded separately from the resolved model identity. Choose a fresh output directory. The runner appends explicit public-web/citation instructions and a prohibition on reading local files; the exact resulting prompt is saved in `prompt.txt`.
 
 New executions start with `outcome: not_assessed`. Inspect the answer, consulted sources, errors, and limitations before writing an evaluation. A correct answer is a pass; a tool outage is an infrastructure limitation; only a demonstrated factual/reasoning error is a model failure. A timeout or absent answer must never be marked as a factual break. Record failures honestly rather than repeatedly editing the outcome to make a benchmark look successful.
+
+## Hard-challenge trials
+
+Three additional isolated actual model trials were completed. **All three passed; no model break was observed.** Directory date labels are organizational names; each `execution.json` records the actual start and finish timestamps.
+
+| Challenge | Actual answer | Evaluation | Exact task and solution |
+|---|---|---|---|
+| Transaction audit | [Answer](sqlite-transaction-audit-live-2026-11-17/answer.md) | [Correct](sqlite-transaction-audit-live-2026-11-17/evaluation.json) | [Package](../challenges/sqlite-transaction-audit/) |
+| Deferral/migration matrix | [Answer](sqlite-deferral-matrix-live-2026-11-17/answer.md) | [Correct](sqlite-deferral-matrix-live-2026-11-17/evaluation.json) | [Package](../challenges/sqlite-deferral-matrix/) |
+| Cyclic schedules | [Answer](cyclic-schedule-orbits-live-2026-11-17/answer.md) | [Correct](cyclic-schedule-orbits-live-2026-11-17/evaluation.json) | [Package](../challenges/cyclic-schedule-orbits/) |
+
+Each record contains its exact prompt, reduced tool events, invocation metadata, final answer, evaluation, and checksums. The same identity limits and isolation rules as the baseline apply. These are single trials on three distinct tasks, not repeated failure screenings or a success-rate estimate. The reference executions and independent small-case check are described in the [challenge index](../challenges/README.md).
+
+## Claude Haiku browser trials — 18 November 2026
+
+The visible model selector in the signed-in Safari session showed **Haiku 5.5 Medium**. Its underlying API model ID was not exposed. The previous Codex passing trials remain separate; they are not relabelled as Claude trials. CLI Haiku 4.5 launch attempts returned authentication errors and generated no task responses, so those do not count as model failures.
+
+| Browser trial | Observed outcome | Review |
+|---|---|---|
+| [Transaction audit](haiku-browser-transaction-audit-2026-11-18/) | Verified semantic failure | At S3, failed to restore parent 1 and children 101/102 on savepoint rollback; subsequent counts also diverged. |
+| [Deferral matrix](haiku-browser-deferral-matrix-2026-11-18/) | Verified semantic failure | Claimed H's commit fails; the pinned Python 3.14.0/SQLite 3.50.4 execution succeeds. |
+| [Cyclic schedules](haiku-browser-cyclic-schedule-2026-11-18/) | Numerical pass | All three totals and all eight stabilizer cells match. |
+
+These are actual browser submissions in three separate Claude chats. The local browser records contain observed excerpts, selected fields, evaluations and private conversation URLs; **they are not full transcripts or provider tool traces**. The long JSON blocks were truncated by accessibility capture, so no exhaustive machine-grading claim is made for those browser answers. The matrix prompt used a condensed equivalent program and shortened wording, so this is not a controlled byte-identical provider comparison. The complete originals remain in the user's Claude account. No public share link has been created. Both SQLite references were rerun on the pinned runtime and exactly matched their saved reference outputs.

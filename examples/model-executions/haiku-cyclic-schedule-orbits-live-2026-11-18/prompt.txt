@@ -1,0 +1,14 @@
+A circular telemetry schedule is a binary word on the 72 labelled positions 0,...,71, containing exactly 24 ones. Read clockwise from any one and let g_0,...,g_23 be the numbers of zeroes between consecutive ones, so the gaps form a circular sequence. A schedule is admissible precisely when all the following hold:
+
+* The gap multiset contains twelve 1s, six 2s, and six 4s.
+* Exactly six indices i satisfy (g_i,g_(i+1))=(1,1).
+* Exactly six indices i satisfy (g_i,g_(i+1))=(2,4) or (4,2), counting both orientations together.
+* No index i satisfies (g_i,g_(i+1),g_(i+2))=(1,4,1).
+
+Every gap index is modulo 24, including the wraparound pairs and triples. Two admissible binary schedules are equivalent if a rotation or reflection of the 72 positions transforms one into the other. Periodic schedules are allowed.
+
+Find the exact number of equivalence classes. Also give the complete stabilizer profile: for each r in {1,2,3,6}, report the number of classes having exactly r rotational symmetries (including identity) and f reflection symmetries, for f=0 and f=r, including zero cells. Here rotations and reflections are those of the 72-position binary schedule, not an arbitrarily chosen linear representative of its gaps. Justify that these eight cells exhaust the possibilities.
+
+As intermediate checks, report the exact number of rooted admissible gap sequences (gap index zero distinguished, direction fixed) and of labelled admissible binary schedules. Derive the symmetry corrections rather than dividing by the group order without checking stabilizers. This is a reasoning-only mathematical exercise: do not execute code, run a simulator, or report estimated counts; an exact recurrence or coefficient formula can support your calculation, but provide the requested numerical results. No external factual information is needed. End with a JSON object containing keys rooted_gap_sequences, labelled_binary_schedules, dihedral_orbits, and profiles; profiles is a list of objects with keys r, f, orbits. Explain the reasoning before the object.
+
+Use public web research and cite the official sources you consulted. Do not access local files.

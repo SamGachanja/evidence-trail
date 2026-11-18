@@ -1,0 +1,81 @@
+{
+  "gap_length": 24,
+  "bit_length": 72,
+  "rooted_gap_sequences": 1707552,
+  "labelled_binary_schedules": 5122656,
+  "dihedral_orbits": 35794,
+  "profiles": [
+    {
+      "r": 1,
+      "f": 0,
+      "orbits": 35358
+    },
+    {
+      "r": 1,
+      "f": 1,
+      "orbits": 396
+    },
+    {
+      "r": 2,
+      "f": 0,
+      "orbits": 33
+    },
+    {
+      "r": 2,
+      "f": 2,
+      "orbits": 0
+    },
+    {
+      "r": 3,
+      "f": 0,
+      "orbits": 2
+    },
+    {
+      "r": 3,
+      "f": 3,
+      "orbits": 4
+    },
+    {
+      "r": 6,
+      "f": 0,
+      "orbits": 1
+    },
+    {
+      "r": 6,
+      "f": 6,
+      "orbits": 0
+    }
+  ],
+  "period_divisibility_counts": {
+    "1": 1707552,
+    "2": 800,
+    "3": 72,
+    "6": 8
+  },
+  "reflection_class_counts": {
+    "1": [
+      600,
+      200
+    ],
+    "2": [
+      0,
+      0
+    ],
+    "3": [
+      6,
+      2
+    ],
+    "6": [
+      0,
+      0
+    ]
+  },
+  "rotation_fixed_sum": 1708512,
+  "reflection_fixed_sum": 9600,
+  "exact_rotational_stabilizer_word_counts": {
+    "6": 8,
+    "3": 64,
+    "2": 792,
+    "1": 1706688
+  }
+}

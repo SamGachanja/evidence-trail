@@ -1,0 +1,5 @@
+{
+  "verdict": "not_executed",
+  "model_break_observed": false,
+  "reason": "Authentication failure: Not logged in. Model selection metadata does not establish that an inference occurred."
+}

@@ -1,0 +1,95 @@
+REFERENCE CHALLENGE, NOT CLAIMED TO BE THE EXACT BROWSER INPUT. See execution.json for UI prompt variations; exact input remains in the Claude chat.
+
+Perform a source-grounded review of a bulk-loader migration for CPython 3.14.0 linked to SQLite 3.50.4. Foreign-key and trigger support are compiled in. Each labeled case starts from its own fresh database. There are no concurrent connections, I/O failures, or statements other than those shown. This is a documentation/source-code reasoning exercise: you may inspect official Python/SQLite documentation or the pinned SQLite source, but do not run Python/SQL or a simulator.
+
+Predict all ten cases A-J in the program below. Return a JSON object containing a cases object keyed A-J, each with exactly the before_commit, commit, and after_commit data constructed by run(); use JSON arrays instead of tuples. You may add a reasoning field and official-source citations. Do not infer that an empty foreign_key_check necessarily means COMMIT succeeds, or that a pragma's recorded boolean captures every internal enforcement state; determine each case independently from the pinned behavior. Conversely, do not assume that any particular failure must occur: a valid prediction may be success. Include the complete row states, referenced parent table name, violations, both pragma flags, and transaction state in every case, not just the commit verdict.
+
+Explain the differences between savepoint rollback and restoring connection pragmas, ordinary parent repair and DDL replacement, and renaming the original table versus renaming its replacement. Assess the proposed policy "a successful COMMIT with foreign_keys=1 proves that no orphan exists" using the exact cases. A format-only issue or a cautious caveat is not a substitute for a factual trace.
+
+Program:
+```python
+import json
+import sqlite3
+import sys
+
+cases = {
+    'A': ['delete'],
+    'B': ['delete', 'defer_off'],
+    'C': ['delete', 'defer_off', 'defer_on'],
+    'D': ['delete', 'save', 'defer_off', 'rollback_to', 'release'],
+    'E': ['delete', 'save', 'defer_off', 'rollback_to', 'release', 'repair'],
+    'F': ['save', 'delete', 'defer_off', 'rollback_to', 'release'],
+    'G': ['rebuild'],
+    'H': ['rebuild', 'defer_off'],
+    'I': ['rename_rebuild', 'defer_off'],
+    'J': ['delete', 'foreign_off'],
+}
+
+
+def state(db):
+    return {
+        'parent': db.execute('SELECT id FROM parent ORDER BY id').fetchall(),
+        'child': db.execute('SELECT id,pid FROM child ORDER BY id').fetchall(),
+        'fk_target': db.execute('PRAGMA foreign_key_list(child)').fetchone()[2],
+        'violations': sorted(db.execute('PRAGMA foreign_key_check').fetchall()),
+        'foreign_keys': db.execute('PRAGMA foreign_keys').fetchone()[0],
+        'defer_foreign_keys': db.execute('PRAGMA defer_foreign_keys').fetchone()[0],
+        'in_transaction': db.in_transaction,
+    }
+
+
+def run(steps):
+    db = sqlite3.connect(':memory:', autocommit=True)
+    db.execute('PRAGMA foreign_keys=ON')
+    db.execute('PRAGMA legacy_alter_table=OFF')
+    db.executescript('''
+    CREATE TABLE parent(id INTEGER PRIMARY KEY);
+    CREATE TABLE child(id INTEGER PRIMARY KEY,pid INTEGER REFERENCES parent(id));
+    INSERT INTO parent VALUES(1);
+    INSERT INTO child VALUES(10,1);
+    ''')
+    db.execute('BEGIN')
+    db.execute('PRAGMA defer_foreign_keys=ON')
+    for step in steps:
+        if step == 'delete':
+            db.execute('DELETE FROM parent WHERE id=1')
+        elif step == 'defer_off':
+            db.execute('PRAGMA defer_foreign_keys=OFF')
+        elif step == 'defer_on':
+            db.execute('PRAGMA defer_foreign_keys=ON')
+        elif step == 'foreign_off':
+            db.execute('PRAGMA foreign_keys=OFF')
+        elif step == 'save':
+            db.execute('SAVEPOINT x')
+        elif step == 'rollback_to':
+            db.execute('ROLLBACK TO x')
+        elif step == 'release':
+            db.execute('RELEASE x')
+        elif step == 'repair':
+            db.execute('INSERT INTO parent VALUES(1)')
+        elif step == 'rebuild':
+            db.execute('CREATE TABLE replacement(id INTEGER PRIMARY KEY)')
+            db.execute('INSERT INTO replacement SELECT id FROM parent')
+            db.execute('DROP TABLE parent')
+            db.execute('ALTER TABLE replacement RENAME TO parent')
+        elif step == 'rename_rebuild':
+            db.execute('ALTER TABLE parent RENAME TO old_parent')
+            db.execute('CREATE TABLE parent(id INTEGER PRIMARY KEY)')
+            db.execute('INSERT INTO parent SELECT id FROM old_parent')
+            db.execute('DROP TABLE old_parent')
+        else:
+            raise ValueError(step)
+    before = state(db)
+    try:
+        db.execute('COMMIT')
+        commit = 'success'
+    except sqlite3.IntegrityError as exc:
+        commit = exc.sqlite_errorname
+    after = state(db)
+    db.close()
+    return {'before_commit': before, 'commit': commit, 'after_commit': after}
+
+
+print(json.dumps({'python':sys.version.split()[0], 'sqlite':sqlite3.sqlite_version,
+                  'cases':{label:run(steps) for label,steps in cases.items()}},indent=2))
+```

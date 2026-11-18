@@ -1,0 +1,9 @@
+{
+  "answer.md": "ec4f9d28d641619cb279284984a0601c97bd2c358b8d58e75874752f143f45a5",
+  "evaluation.json": "7ecaa308c56be78b651ff7fddd7ae6dc5b396894f68e67f816e7e0ff083b8cbe",
+  "execution.json": "a4db60ae72da032b276acf741e41b4ce744cbbd13ec38256bdf4c32104f404c5",
+  "prompt.txt": "461a3cd51bc6fc45f39791d843275c75096fbc7573f310b92fc86fdeac4b4e82",
+  "stderr.txt": "db2f4007b473d2b7aebb777dd7057710fbde602e591aee78170f766c65b2e48d",
+  "task.reference.json": "5258fd86b94b14b94069d990f7c055bad781175e8be6620dc9350b7168e71bb7",
+  "tool-events.json": "08850db552994b084d6dc13fb2c2193b89365a4a7f8a93c5e3af201faed18af2"
+}

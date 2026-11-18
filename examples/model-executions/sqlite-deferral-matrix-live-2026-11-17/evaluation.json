@@ -1,0 +1,10 @@
+{
+  "verdict": "correct",
+  "model_break_candidate": false,
+  "semantic_mismatches": [],
+  "missing_fields": [],
+  "review_required": "Review the actual response and pinned-runtime evidence; syntax or schema differences alone do not establish a factual break.",
+  "model_break_observed": false,
+  "evaluation_type": "Assistant review against executed pinned-runtime oracle and official rules; not independent human review",
+  "note": "All ten cases match, including successful commits with orphan rows and failed commits with no reported foreign-key violations."
+}

@@ -1,0 +1,40 @@
+{
+  "provider": "Anthropic via authenticated Claude Code",
+  "requested_model": "haiku",
+  "cli_version": "2.1.140 (Claude Code)",
+  "started_at": "2026-11-17T21:36:57.856699+00:00",
+  "cli_command": [
+    "claude",
+    "--print",
+    "--model",
+    "haiku",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--disable-slash-commands",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--tools",
+    "WebSearch,WebFetch",
+    "--allowedTools",
+    "WebSearch,WebFetch",
+    "--permission-mode",
+    "dontAsk"
+  ],
+  "outcome": "infrastructure_error",
+  "prompt_sha256": "45d0aa8717670d2ddd1242115e804ac623d26817cd778924dead10bbb3d38379",
+  "input_transport": "Exact prompt.txt via stdin; reference answer not provided",
+  "isolation": "Fresh temporary cwd; only WebSearch/WebFetch tools; no MCP servers; no session persistence. CLI authentication remains external.",
+  "exit_code": 1,
+  "reported_models": [
+    "<synthetic>",
+    "claude-haiku-4-5-20251001"
+  ],
+  "result_is_error": true,
+  "finished_at": "2026-11-17T21:36:59.184685+00:00",
+  "evaluation_note": "Claude Code returned Not logged in. No task answer was generated, so this is not a model performance result."
+}

@@ -1,0 +1,15 @@
+{
+  "verdict": "flawed",
+  "model_break_observed": true,
+  "semantic_mismatches": [
+    {
+      "case": "H",
+      "field": "commit",
+      "actual_claim": "Commit fails after rebuild and defer_off",
+      "expected": "success"
+    }
+  ],
+  "exact_flagged_span": "Rebuilding the parent (G, H) runs an implicit DELETE that increments the counter, so the commit fails even though the child now points at a valid row.",
+  "explanation": "G fails but H succeeds. H switches defer_foreign_keys OFF after the rebuild, clearing the deferred enforcement tracking. The executed H state has no row violations, commit=success and in_transaction=false afterward.",
+  "scope": "The exact quoted prose claim about H was checked against the executed reference. Additional incorrect claims exist in the answer but are not exhaustively graded here."
+}

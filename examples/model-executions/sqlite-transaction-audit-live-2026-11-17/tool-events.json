@@ -1,0 +1,205 @@
+[
+  {
+    "event": "thread.started"
+  },
+  {
+    "event": "turn.started"
+  },
+  {
+    "event": "item.completed",
+    "item_type": "agent_message"
+  },
+  {
+    "event": "item.started",
+    "item_type": "web_search",
+    "query": "",
+    "action": {
+      "type": "other"
+    },
+    "sources": []
+  },
+  {
+    "event": "item.completed",
+    "item_type": "web_search",
+    "query": "https://docs.python.org/release/3.14.0/library/sqlite3.html",
+    "action": {
+      "type": "open_page",
+      "url": "https://docs.python.org/release/3.14.0/library/sqlite3.html"
+    },
+    "sources": [
+      {
+        "type": "text_result",
+        "title": "Internal Error"
+      },
+      {
+        "type": "text_result",
+        "title": "The ON CONFLICT Clause",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/lang_conflict.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Count The Number Of Rows Modified",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/c3ref/changes.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Total Number Of Rows Modified",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/c3ref/total_changes.html"
+      },
+      {
+        "type": "text_result",
+        "title": "SQLite Foreign Key Support",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/foreignkeys.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Pragma statements supported by SQLite",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/pragma.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Savepoints",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/lang_savepoint.html"
+      }
+    ]
+  },
+  {
+    "event": "item.started",
+    "item_type": "web_search",
+    "query": "",
+    "action": {
+      "type": "other"
+    },
+    "sources": []
+  },
+  {
+    "event": "item.completed",
+    "item_type": "web_search",
+    "query": "'If the body' in https://docs.python.org/3.14/library/sqlite3.html",
+    "action": {
+      "type": "find_in_page",
+      "url": "https://docs.python.org/3.14/library/sqlite3.html"
+    },
+    "sources": [
+      {
+        "type": "text_result",
+        "title": "sqlite3 — DB-API 2.0 interface for SQLite databases — Python 3.14.10 documentation",
+        "domain": "docs.python.org",
+        "url": "https://docs.python.org/3.14/library/sqlite3.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Internal Error"
+      },
+      {
+        "type": "text_result",
+        "title": "SQLite Foreign Key Support",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/foreignkeys.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Pragma statements supported by SQLite",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/pragma.html"
+      }
+    ]
+  },
+  {
+    "event": "item.started",
+    "item_type": "web_search",
+    "query": "",
+    "action": {
+      "type": "other"
+    },
+    "sources": []
+  },
+  {
+    "event": "item.completed",
+    "item_type": "web_search",
+    "query": "'v->nChange' in https://raw.githubusercontent.com/sqlite/sqlite/version-3.50.4/src/vdbeaux.c",
+    "action": {
+      "type": "find_in_page",
+      "url": "https://raw.githubusercontent.com/sqlite/sqlite/version-3.50.4/src/vdbeaux.c"
+    },
+    "sources": [
+      {
+        "type": "text_result",
+        "domain": "raw.githubusercontent.com",
+        "url": "https://raw.githubusercontent.com/sqlite/sqlite/version-3.50.4/src/vdbeaux.c"
+      },
+      {
+        "type": "text_result",
+        "domain": "raw.githubusercontent.com",
+        "url": "https://raw.githubusercontent.com/python/cpython/v3.14.0/Modules/_sqlite/connection.c"
+      },
+      {
+        "type": "text_result",
+        "title": "SQLite Foreign Key Support",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/foreignkeys.html"
+      },
+      {
+        "type": "text_result",
+        "title": "Pragma statements supported by SQLite",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/pragma.html"
+      }
+    ]
+  },
+  {
+    "event": "item.started",
+    "item_type": "web_search",
+    "query": "",
+    "action": {
+      "type": "other"
+    },
+    "sources": []
+  },
+  {
+    "event": "item.completed",
+    "item_type": "web_search",
+    "query": "'eStatementOp!=SAVEPOINT_ROLLBACK'",
+    "action": {
+      "type": "find_in_page"
+    },
+    "sources": [
+      {
+        "type": "text_result",
+        "domain": "raw.githubusercontent.com",
+        "url": "https://raw.githubusercontent.com/sqlite/sqlite/version-3.50.4/src/vdbeaux.c"
+      },
+      {
+        "type": "text_result",
+        "domain": "raw.githubusercontent.com",
+        "url": "https://raw.githubusercontent.com/sqlite/sqlite/version-3.50.4/src/insert.c"
+      },
+      {
+        "type": "text_result",
+        "title": "Result and Error Codes",
+        "domain": "sqlite.org",
+        "url": "https://sqlite.org/rescode.html"
+      }
+    ]
+  },
+  {
+    "event": "item.completed",
+    "item_type": "agent_message"
+  },
+  {
+    "event": "turn.completed",
+    "usage": {
+      "input_tokens": 140145,
+      "cached_input_tokens": 116096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2772,
+      "reasoning_output_tokens": 49
+    }
+  }
+]

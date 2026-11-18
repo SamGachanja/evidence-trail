@@ -1,0 +1,440 @@
+{
+  "python": "3.14.0",
+  "sqlite": "3.50.4",
+  "cases": {
+    "A": {
+      "before_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      },
+      "commit": "SQLITE_CONSTRAINT_FOREIGNKEY",
+      "after_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      }
+    },
+    "B": {
+      "before_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      },
+      "commit": "success",
+      "after_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": false
+      }
+    },
+    "C": {
+      "before_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      },
+      "commit": "success",
+      "after_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": false
+      }
+    },
+    "D": {
+      "before_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      },
+      "commit": "SQLITE_CONSTRAINT_FOREIGNKEY",
+      "after_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      }
+    },
+    "E": {
+      "before_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      },
+      "commit": "SQLITE_CONSTRAINT_FOREIGNKEY",
+      "after_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      }
+    },
+    "F": {
+      "before_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      },
+      "commit": "success",
+      "after_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": false
+      }
+    },
+    "G": {
+      "before_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      },
+      "commit": "SQLITE_CONSTRAINT_FOREIGNKEY",
+      "after_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      }
+    },
+    "H": {
+      "before_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      },
+      "commit": "success",
+      "after_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": false
+      }
+    },
+    "I": {
+      "before_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "old_parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "old_parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": true
+      },
+      "commit": "success",
+      "after_commit": {
+        "parent": [
+          [
+            1
+          ]
+        ],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "old_parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "old_parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 0,
+        "in_transaction": false
+      }
+    },
+    "J": {
+      "before_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      },
+      "commit": "SQLITE_CONSTRAINT_FOREIGNKEY",
+      "after_commit": {
+        "parent": [],
+        "child": [
+          [
+            10,
+            1
+          ]
+        ],
+        "fk_target": "parent",
+        "violations": [
+          [
+            "child",
+            10,
+            "parent",
+            0
+          ]
+        ],
+        "foreign_keys": 1,
+        "defer_foreign_keys": 1,
+        "in_transaction": true
+      }
+    }
+  }
+}

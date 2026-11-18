@@ -1,0 +1,30 @@
+{
+  "started_at": "2026-11-17T20:49:56.987309+00:00",
+  "cli_version": "codex-cli 0.169.0-alpha.11.1",
+  "requested_model": null,
+  "resolved_model": null,
+  "model_identity_note": "No resolved model identifier was returned by this event stream; do not infer one from the CLI version.",
+  "prompt_sha256": "45d0aa8717670d2ddd1242115e804ac623d26817cd778924dead10bbb3d38379",
+  "outcome": "correct",
+  "evaluation_note": "Review the actual answer against verified sources; no automatic correctness judgment is made.",
+  "cli_command": [
+    "codex",
+    "--search",
+    "--ask-for-approval",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--output-last-message",
+    "<isolated-workspace>/answer.md",
+    "-"
+  ],
+  "input_transport": "Exact prompt.txt via stdin; golden answer was not passed to the model",
+  "exit_code": 0,
+  "finished_at": "2026-11-17T20:51:46.121439+00:00",
+  "trace_scope": "Event kinds, web queries/actions, source metadata and token usage only; private reasoning, response bodies and thread IDs omitted."
+}

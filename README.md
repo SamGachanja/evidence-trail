@@ -55,6 +55,8 @@ This opt-in command makes real public HTML requests and requires a fresh output 
 
 A separate [actual model execution](examples/model-executions/README.md) records the exact prompt, model answer, live web-tool events, and evaluation. The model **passed** the release-date baseline; no break is claimed. Use `examples/model_run.py` to capture another authenticated model run, optionally selecting an explicit model. This invokes an AI service and is separate from the source-audit runner above.
 
+Three [hard challenge packages](examples/challenges/README.md) include verified references and actual model trials covering SQLite transaction semantics, migration/deferral behavior, and cyclic scheduling symmetry counts. The three Codex trials passed. Subsequent Haiku 5.5 Medium browser trials produced two verified SQLite reasoning failures and a numerical pass on the cyclic task; see the linked execution records. Difficulty alone is never labelled a model break.
+
 ## Workflow
 
 ```text

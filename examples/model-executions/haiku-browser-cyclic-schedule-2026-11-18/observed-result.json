@@ -1,0 +1,47 @@
+{
+  "rooted_gap_sequences": 1707552,
+  "labelled_binary_schedules": 5122656,
+  "dihedral_orbits": 35794,
+  "profiles": [
+    {
+      "r": 1,
+      "f": 0,
+      "orbits": 35358
+    },
+    {
+      "r": 1,
+      "f": 1,
+      "orbits": 396
+    },
+    {
+      "r": 2,
+      "f": 0,
+      "orbits": 33
+    },
+    {
+      "r": 2,
+      "f": 2,
+      "orbits": 0
+    },
+    {
+      "r": 3,
+      "f": 0,
+      "orbits": 2
+    },
+    {
+      "r": 3,
+      "f": 3,
+      "orbits": 4
+    },
+    {
+      "r": 6,
+      "f": 0,
+      "orbits": 1
+    },
+    {
+      "r": 6,
+      "f": 6,
+      "orbits": 0
+    }
+  ]
+}

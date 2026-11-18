@@ -1,6 +1,0 @@
-{
-  "verdict": "correct_numeric_results",
-  "model_break_observed": false,
-  "semantic_mismatches": [],
-  "scope": "All three requested totals and all eight stabilizer cells match the reference. This records numerical verification, not an independently reviewed proof of every prose step."
-}

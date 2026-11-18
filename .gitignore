@@ -11,3 +11,8 @@ tasks/
 reviews/
 archive/
 config/blocklist.txt
+
+# Local execution output and scratch work; curate examples explicitly.
+/runs/
+/scratch/
+/.cache/

@@ -1,9 +1,0 @@
-{
-  "answer.md": "04b013e2f6d32a0cd8cf2079d8284aca3b6e441b2e61aa39638e6e3c698fa45a",
-  "evaluation.json": "3650a982b1b5361e7680a4cb65bd3e087e0bfb94015e4d179d3f4e371979cd5a",
-  "execution.json": "92f0eb2c9aca26f26d46f5b28b84c2dff7a9a6eadeb1febdc3a2420c0db844a9",
-  "prompt.txt": "753c33ee0a9680b5b2c565f9a4ecb36c7360094ab46690fe7647e1e80d249b69",
-  "stderr.txt": "70cbb389f8bb57429e7d0a8e2eda1312ee2163b0f3d854413b8ab041ea525cd5",
-  "task.reference.json": "b0b3c8a063db6e53909cb6654408e0a359b15967c3edb371b10d12820cc66143",
-  "tool-events.json": "1a128211baf15685d5dad1dadeafe0143073d7d9a78f44d5ba647838dcbb2e70"
-}

@@ -1,5 +1,0 @@
-{
-  "verdict": "not_executed",
-  "model_break_observed": false,
-  "reason": "Authentication error: Not logged in. No task response."
-}

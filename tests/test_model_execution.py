@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN = ROOT / 'examples/model-executions/release-dates-baseline-2026-11-17'
+RUN = ROOT / 'examples/release-dates/model-run'
 
 
 class ModelExecutionRecordTests(unittest.TestCase):
@@ -30,7 +30,7 @@ class ModelExecutionRecordTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(prompt).hexdigest(), metadata['prompt_sha256'])
 
     def test_event_export_excludes_reasoning_bodies_and_thread_ids(self):
-        spec = importlib.util.spec_from_file_location('model_recorder', ROOT / 'examples/model_run.py')
+        spec = importlib.util.spec_from_file_location('model_recorder', ROOT / 'scripts/run_codex.py')
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         synthetic = '\n'.join(json.dumps(event) for event in [

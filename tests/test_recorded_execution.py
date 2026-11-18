@@ -7,7 +7,7 @@ import unittest
 from evidencetrail import validate_task
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN = ROOT / 'examples/executions/public-release-dates-live-2026-11-17'
+RUN = ROOT / 'examples/release-dates/source-audit'
 
 
 class RecordedExecutionTests(unittest.TestCase):

@@ -1,9 +1,0 @@
-{
-  "verdict": "correct",
-  "model_break_candidate": false,
-  "semantic_mismatches": [],
-  "missing_fields": [],
-  "model_break_observed": false,
-  "evaluation_type": "Assistant comparison against executed integer reference and review of derivation; not independent human review",
-  "note": "All three totals and eight stabilizer cells match. The model supplied a run-decomposition derivation independent of the reference recurrence. No model break was observed."
-}

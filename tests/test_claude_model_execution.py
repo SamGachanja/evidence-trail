@@ -5,7 +5,7 @@ from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('claude_model_run', ROOT / 'examples/claude_model_run.py')
+spec = importlib.util.spec_from_file_location('claude_model_run', ROOT / 'scripts/run_haiku.py')
 runner = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runner)
 
